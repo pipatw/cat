@@ -6814,3 +6814,6 @@ td.visible-print {
     display: none !important;
   }
 }
+
+
+.top-buffer { margin-top:20px; }
