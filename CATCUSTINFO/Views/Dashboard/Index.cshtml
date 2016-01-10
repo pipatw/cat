@@ -1,0 +1,283 @@
+﻿@using Kendo.Mvc.UI
+@{
+    ViewBag.Title = "Home>";
+}
+<h1>@ViewBag.Title</h1>
+<div class="row">
+    <div class="col-sm-4">
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="gauge-container"><h4>จำนวนลูกค้าปัจจุบัน</h4>
+                    @(Html.Kendo().RadialGauge()
+          .Name("gauge")
+          
+          .Pointer(pointer => pointer.Value(17234))
+                          .HtmlAttributes(new { style = "max-width:320px;height:220px;" })
+          .Scale(scale => scale
+              .MinorUnit(250)
+              .StartAngle(-60)
+              .EndAngle(240)
+              .Max(30000)
+              .Labels(labels => labels
+                  .Position(GaugeRadialScaleLabelsPosition.Outside)
+              )
+              .Ranges(ranges =>
+              {
+                  ranges.Add().From(0).To(10000).Color("#c20000");
+                  ranges.Add().From(10000).To(15000).Color("#ff7a00");
+                  ranges.Add().From(15000).To(18000).Color("#ffc700");
+                  ranges.Add().From(18000).To(30000).Color("#00ff00");
+              })
+         )
+                    )
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="chart-wrapper">
+
+                    @(Html.Kendo().Chart()
+        .Name("chartmedia")
+                .Title(title => title
+                    .Text("แยกตามประเภทสาย")
+                    .Position(ChartTitlePosition.Top)
+                    .Visible(false)
+                    )
+        .Legend(legend => legend
+            .Visible(false)
+                )
+                .HtmlAttributes(new { style = "max-width:320px;height:320px;" })
+        .Series(series =>
+        {
+            series.Pie(new dynamic[] {
+                new {category="ไฟเบอร์ออฟติก",value=29.8,color="#0094ff"},
+                new {category="สายทองแดง",value=70.2,color="#f36f21"}
+            })
+            .Labels(labels => labels
+                .Template("#= category #: \n #= value#%")
+                .Background("transparent")
+                .Visible(true)
+                .Position(ChartPieLabelsPosition.Center)
+            )
+            .StartAngle(150);
+        })
+        .Tooltip(tooltip => tooltip
+            .Visible(true)
+            .Format("{0}%")
+        )
+                    )
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12"></div>
+        </div>
+    </div>
+    <div class="col-sm-8">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="chart-wrapper">
+                    @(Html.Kendo().Chart()
+        .Name("chart1")
+        .Title("ระดับประสิทธิภาพงานแยกตามเขต ปี " + (DateTime.Today.Year < 2500 ? DateTime.Today.Year + 543 : DateTime.Today.Year))
+        .Legend(legend => legend
+            .Position(ChartLegendPosition.Bottom)
+        )
+        .ChartArea(chartArea => chartArea
+            .Background("transparent")
+        )
+
+        .Series(series =>
+        {
+            series.Line(new double[] { 3.907, 7.943, 7.848, 9.284, 9.263, 9.801, 3.890, 8.238, 9.552, 6.855 }).Name("สข.(น)");
+            series.Line(new double[] { 1.988, 2.733, 3.994, 3.464, 4.001, 3.939, 1.333, 2.245, 4.339, 2.727 }).Name("สข.(ตต)");
+            series.Line(new double[] { 4.743, 7.295, 7.175, 6.376, 8.153, 8.535, 5.247, 4.832, 4.3, 4.3 }).Name("สข.(ต)");
+            series.Line(new double[] { -0.253, 0.362, 3.519, 1.799, 2.252, 3.343, 0.843, 2.877, 5.416, 5.590 }).Name("สข.(อน)");
+
+            series.Line(new double[] { 2.742, 3.832, 7.905, 8.73, 3.055, 3.143, 5.296, 6.153, 4.251, 3.885 }).Name("สข.(ก)");
+            series.Line(new double[] { 0.546, 6.524, 9.304, 4.811, 4.262, 0.619, 0.211, 4.101, 1.493, 9.332 }).Name("สข.(อ)");
+
+        })
+        .CategoryAxis(axis => axis
+            .Categories("ม.ค.", "ก.พ.", "มี.ค.", "เม.ย.", "พ.ค.", "มิ.ย.", "ก.ค.", "ส.ค.", "ก.ย.", "ต.ค.")
+            .MajorGridLines(lines => lines.Visible(false))
+        )
+        .ValueAxis(axis => axis
+            .Numeric().Labels(labels => labels.Format("{0}%"))
+                                    .Line(line => line.Visible(false))
+                                    .AxisCrossingValue(-10)
+        )
+        .Tooltip(tooltip => tooltip
+            .Visible(true)
+            .Format("{0}%")
+        )
+                    )
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h4>ประสิทธิภาพงาน เดือนปัจจุบัน</h4>
+            <div class="col-sm-5">
+                <div class="chart-wrapper">
+
+                    <div class="temperature">
+                        <span>
+                            สำนักงานบริการลูกค้า กสท เขตเหนือ สข.(น)
+                        </span>
+                        <div class="stats">
+                            @(Html.Kendo().Sparkline()
+                    .Name("temp-range")
+                    .Type(SparklineType.Bullet)
+                    .ValueAxis(axis => axis
+                        .Numeric()
+                        .Min(0)
+                        .Max(30)
+                        .PlotBands(bands =>
+                        {
+                            bands.Add().From(0).To(15).Color("#787878").Opacity(0.15);
+                            bands.Add().From(15).To(22).Color("#787878").Opacity(0.3);
+                            bands.Add().From(22).To(30).Color("#787878").Opacity(0.15);
+                        })
+                    )
+                    .Data(ViewBag.TemperatureRange)
+                            )
+                        </div>
+                    </div>
+
+                    <div class="temperature">
+                        <span>
+                            สำนักงานบริการลูกค้า กสท เขตตะวันตก สข.(ตต)
+                        </span>
+                        <div class="stats">
+                            @(Html.Kendo().Sparkline()
+                    .Name("temp-range2")
+                    .Type(SparklineType.Bullet)
+                    .ValueAxis(axis => axis
+                        .Numeric()
+                        .Min(0)
+                        .Max(30)
+                        .PlotBands(bands =>
+                        {
+                            bands.Add().From(0).To(15).Color("#787878").Opacity(0.15);
+                            bands.Add().From(15).To(22).Color("#787878").Opacity(0.3);
+                            bands.Add().From(22).To(30).Color("#787878").Opacity(0.15);
+                        })
+                    )
+                            .Data(ViewBag.TargetRange)
+                            )
+                        </div>
+                    </div>
+
+                    <div class="temperature">
+                        <span>
+                            สำนักงานบริการลูกค้า กสท เขตใต้ สข.(ต)
+                        </span>
+                        <div class="stats">
+                            @(Html.Kendo().Sparkline()
+                    .Name("temp-range3")
+                    .Type(SparklineType.Bullet)
+                    .ValueAxis(axis => axis
+                        .Numeric()
+                        .Min(0)
+                        .Max(30)
+                        .PlotBands(bands =>
+                        {
+                            bands.Add().From(0).To(15).Color("#787878").Opacity(0.15);
+                            bands.Add().From(15).To(22).Color("#787878").Opacity(0.3);
+                            bands.Add().From(22).To(30).Color("#787878").Opacity(0.15);
+                        })
+                    )
+                    .Data(ViewBag.TemperatureRange)
+                            )
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="chart-wrapper">
+
+                    <div class="temperature">
+                        <span>
+                            สำนักงานบริการลูกค้า กสท เขตตะวันออกเฉียงเหนือ สข.(อน)
+                        </span>
+                        <div class="stats">
+                            @(Html.Kendo().Sparkline()
+                    .Name("temp-range4")
+                    .Type(SparklineType.Bullet)
+                    .ValueAxis(axis => axis
+                        .Numeric()
+                        .Min(0)
+                        .Max(30)
+                        .PlotBands(bands =>
+                        {
+                            bands.Add().From(0).To(15).Color("#787878").Opacity(0.15);
+                            bands.Add().From(15).To(22).Color("#787878").Opacity(0.3);
+                            bands.Add().From(22).To(30).Color("#787878").Opacity(0.15);
+                        })
+                    )
+                            .Data(ViewBag.TargetRange)
+                            )
+                        </div>
+                    </div>
+
+                    <div class="temperature">
+                        <span>
+                            สำนักงานบริการลูกค้า กสท เขตกลาง สข.(ก)
+                        </span>
+                        <div class="stats">
+                            @(Html.Kendo().Sparkline()
+                    .Name("temp-range5")
+                    .Type(SparklineType.Bullet)
+                    .ValueAxis(axis => axis
+                        .Numeric()
+                        .Min(0)
+                        .Max(30)
+                        .PlotBands(bands =>
+                        {
+                            bands.Add().From(0).To(15).Color("#787878").Opacity(0.15);
+                            bands.Add().From(15).To(22).Color("#787878").Opacity(0.3);
+                            bands.Add().From(22).To(30).Color("#787878").Opacity(0.15);
+                        })
+                    )
+                    .Data(ViewBag.TemperatureRange)
+                            )
+                        </div>
+                    </div>
+
+                    <div class="temperature">
+                        <span>
+                            สำนักงานบริการลูกค้า กสท เขตตะวันออก สข.(อ)
+                        </span>
+                        <div class="stats">
+                            @(Html.Kendo().Sparkline()
+                    .Name("temp-range6")
+                    .Type(SparklineType.Bullet)
+                    .ValueAxis(axis => axis
+                        .Numeric()
+                        .Min(0)
+                        .Max(50)
+                        .PlotBands(bands =>
+                        {
+                            bands.Add().From(0).To(15).Color("#787878").Opacity(0.15);
+                            bands.Add().From(15).To(22).Color("#787878").Opacity(0.3);
+                            bands.Add().From(22).To(50).Color("#787878").Opacity(0.15);
+                        })
+                    )
+                            .Data(ViewBag.TargetRange)
+                            )
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

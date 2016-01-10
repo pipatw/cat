@@ -1,0 +1,201 @@
+﻿body {
+    padding-top: 64px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#bg {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    z-index:-99999;
+}
+
+    #bg img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        min-width: 50%;
+        min-height: 50%;
+         z-index:-99999;
+    }
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+.navbar-inverse {
+    background-color: #f36f21;
+    color: #ffffff;
+}
+
+    .navbar-inverse a {
+        color: #ffffff;
+    }
+
+    .navbar-inverse .navbar-nav > li > a {
+        color: #ffffff;
+    }
+
+        .navbar-inverse .navbar-nav > li > a:hover {
+            color: #ffffff;
+            background-color: #b5551c;
+        }
+
+.navbar-nav > li > a {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.navbar-nav a {
+    color: #ffffff;
+}
+
+#loginForm > label {
+    padding-left: 0px;
+}
+
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        margin-top: 20px;
+    }
+
+    .body-content {
+        padding: 0;
+    }
+
+
+    .logo {
+        max-height: 60px;
+        margin-top: -15px;
+    }
+
+    .navbar {
+        height: 64px;
+        border-bottom: hidden;
+    }
+
+    .nav > li > a {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+        .nav > li > a:first-child {
+            padding-left: 8px;
+        }
+
+
+
+    .navbar-right .row {
+        font-size: 0.8em;
+        height: 36px;
+    }
+
+
+        .navbar-right .row > .nav > li > a {
+            display: inline;
+        }
+
+
+    .topnavbar ul {
+        height: 26px;
+        line-height: 26px;
+        border-radius: 0px 0px 10px 10px;
+        background-color: #6d6e71;
+        padding-left: 10px;
+        padding-right: 10px;
+        user-select: none;
+    }
+
+        .topnavbar ul > li:first-child {
+            border-right: solid 1px #808080;
+        }
+
+        .topnavbar ul > li:last-child::before {
+            content: "|";
+        }
+
+    .topnavbar .nav > li > a:hover {
+        background-color: transparent;
+    }
+
+
+    /*.divlogin {
+        max-width: 440px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #ffffff;
+        
+        padding: 8px 20px 8px 20px;
+        
+    }*/
+
+    /*border-radius: 5px 5px 5px 5px;*/
+    /*-webkit-box-shadow: 0px 0px 44px 0px rgba(0,0,0,0.39);
+        -moz-box-shadow: 0px 0px 44px 0px rgba(0,0,0,0.39);
+        box-shadow: 0px 0px 44px 0px rgba(0,0,0,0.39);*/
+    .mainnav > li {
+        font-size: 1.4em;
+        padding-top: 15px;
+        height: 36px;
+    }
+
+    .loginleftpanel {
+        border-right: solid 1px #ff6a00;
+        height: 320px;
+        vertical-align: middle;
+        line-height: 320px;
+    }
+}
+
+@media (orientation: portrait) {
+
+    .loginleftpanel {
+        border-right: none;
+        height: 80px;
+        vertical-align: middle;
+        line-height: 80px;
+    }
+}
+
+@media all and (max-width:768px) {
+    .topnavbar {
+        display: none;
+    }
+
+    .logo {
+        max-height: 60px;
+        margin-top: -10px;
+    }
+
+    .loginleftpanel {
+        border-right: none;
+        height: 80px;
+        vertical-align: middle;
+        line-height: 80px;
+    }
+}

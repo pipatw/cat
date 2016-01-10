@@ -1,0 +1,20 @@
+﻿@using Kendo.Mvc.UI
+@{
+    ViewBag.Title = "Data Import";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div style="width:45%">
+    <div class="demo-section">
+        @(Html.Kendo().Upload()
+            .Name("files")
+            .Async(a => a
+                .Save("Save", "Upload")
+                .Remove("Remove", "Upload")
+                .AutoUpload(true)
+            )
+        )
+    </div>
+</div>
+
