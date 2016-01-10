@@ -41,37 +41,23 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav mainnav" style="">
-                    <li>@Html.ActionLink("Main Page", "index", "dashboard")</li>
-                    <li>@Html.ActionLink("Information Data", "index", "InfoData")</li>
-                    <li>@Html.ActionLink("Assign KPI", "index", "InfoData")</li>
-                    <li>@Html.ActionLink("KPI Report", "index", "KPIReport")</li>
-                    <li>@Html.ActionLink("Monitor KPI", "index", "KPIReport")</li>
-                    @*<li>@Html.ActionLink("Report", "index", "KPIReport")</li>
-                    <li>@Html.ActionLink("Analysis Data", "index", "KPIReport")</li>
-                    <li>@Html.ActionLink("Import Data", "index", "dataimport")</li>
-                    <li>@Html.ActionLink("Approve Data", "index", "KPIReport")</li>
-                    <li>@Html.ActionLink("Manage User", "index", "KPIReport")</li>
-                    <li>@Html.ActionLink("About", "index", "KPIReport")</li>*@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">เครื่องมือ <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li>@Html.ActionLink("จัดการ KPI", "index", new { controller = "toolkpi", area = "" })</li>
-                            <li>@Html.ActionLink("วิเคราะห์ข้อมูลส่งเสริมการขาย", "index", new { controller = "toolpromotion", area = "" })</li>
+                            <li>@Html.ActionLink("จัดการ KPI", "index", "AssignKPI")</li>
+                            <li>@Html.ActionLink("Import Data", "index", "ImportData")</li>
+                            <li>@Html.ActionLink("Approve Data", "index", "ApproveData")</li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">รายงาน <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li role="presentation" class="dropdown-header">Car Master</li>
-                            <li>@Html.ActionLink("Car Maker", "index", new { controller = "carmaker", area = "workspaces" })</li>
-                            <li>@Html.ActionLink("Car Model", "index", new { controller = "carmodel", area = "workspaces" })</li>
-                            <li role="presentation" class="divider"></li>
-                            <li role="presentation" class="dropdown-header">Material Specification</li>
-                            <li>@Html.ActionLink("Material Type", "index", "MaterialType", new { area = "workspaces" }, null)</li>
-                            <li>@Html.ActionLink("Material Option", "index", "MaterialOption", new { area = "workspaces" }, null)</li>
-                            <li role="presentation" class="dropdown-header">Miscellaneous</li>
-                            <li>@Html.ActionLink("Product Specification", "index", "productspec", new { area = "workspaces" }, null)</li>
-                            <li>@Html.ActionLink("Install Location", "index", new { controller = "installlocation", area = "workspaces" })</li>
+                            <li>@Html.ActionLink("Information Data", "index", "InfoData")</li>
+                            <li>@Html.ActionLink("KPI Report", "index", "KPIReport")</li>
+                            <li>@Html.ActionLink("Monitor KPI", "index", "MonitorKPI")</li>
+                            <li>@Html.ActionLink("Report", "index", "Report")</li>
+                            <li>@Html.ActionLink("Analysis Data", "index", "AnalysisData")</li>
+                            
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -79,9 +65,9 @@
                         <ul class="dropdown-menu" role="menu">
                             <li>@Html.ActionLink("จัดการผู้ใช้งาน", "index", new { controller = "carmaker", area = "workspaces" })</li>
                             <li>@Html.ActionLink("จัดการสิทธิ์", "index", new { controller = "carmodel", area = "workspaces" })</li>
-                            <li>@Html.ActionLink("จัดการผังองค์กร", "index", "MaterialType", new { area = "workspaces" }, null)</li>
                         </ul>
                     </li>
+                    <li>@Html.ActionLink("เกี่ยวกับเรา", "index", "about")</li>
                 </ul>
 
 
