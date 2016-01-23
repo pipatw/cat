@@ -12,6 +12,8 @@ namespace CATCUSTINFO.Controllers
         public ActionResult Index()
         {
             return View();
+
+
         }
     }
 }
