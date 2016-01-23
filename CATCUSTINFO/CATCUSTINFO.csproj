@@ -174,6 +174,8 @@
     <Compile Include="Controllers\InfoDataController.cs" />
     <Compile Include="Controllers\KPIReportController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ManageRoleController.cs" />
+    <Compile Include="Controllers\ManageUserController.cs" />
     <Compile Include="Controllers\MiscellaneousController.cs" />
     <Compile Include="Controllers\ModifyKPIController.cs" />
     <Compile Include="Controllers\ReportViewerController.cs" />
@@ -906,6 +908,8 @@
     <Content Include="Views\ImportData\Index.cshtml" />
     <Content Include="Views\ApproveData\Index.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\ManageUser\Index.cshtml" />
+    <Content Include="Views\ManageRole\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
