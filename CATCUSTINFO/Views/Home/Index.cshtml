@@ -10,26 +10,26 @@
                 <div id="gauge-container">
                     <h4>จำนวนลูกค้าปัจจุบัน</h4>
                     @(Html.Kendo().RadialGauge()
-          .Name("gauge")
+                      .Name("gauge")
 
-          .Pointer(pointer => pointer.Value(17234))
-                          .HtmlAttributes(new { style = "max-width:320px;height:220px;" })
-          .Scale(scale => scale
-              .MinorUnit(250)
-              .StartAngle(-60)
-              .EndAngle(240)
-              .Max(30000)
-              .Labels(labels => labels
-                  .Position(GaugeRadialScaleLabelsPosition.Outside)
-              )
-              .Ranges(ranges =>
-              {
-                  ranges.Add().From(0).To(10000).Color("#c20000");
-                  ranges.Add().From(10000).To(15000).Color("#ff7a00");
-                  ranges.Add().From(15000).To(18000).Color("#ffc700");
-                  ranges.Add().From(18000).To(30000).Color("#00ff00");
-              })
-         )
+                      .Pointer(pointer => pointer.Value(17234))
+                                      .HtmlAttributes(new { style = "max-width:320px;height:220px;" })
+                      .Scale(scale => scale
+                          .MinorUnit(250)
+                          .StartAngle(-60)
+                          .EndAngle(240)
+                          .Max(30000)
+                          .Labels(labels => labels
+                              .Position(GaugeRadialScaleLabelsPosition.Outside)
+                          )
+                          .Ranges(ranges =>
+                          {
+                              ranges.Add().From(0).To(10000).Color("#c20000");
+                              ranges.Add().From(10000).To(15000).Color("#ff7a00");
+                              ranges.Add().From(15000).To(18000).Color("#ffc700");
+                              ranges.Add().From(18000).To(30000).Color("#00ff00");
+                          })
+                     )
                     )
                 </div>
 
