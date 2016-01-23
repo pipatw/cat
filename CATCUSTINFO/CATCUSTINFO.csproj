@@ -172,6 +172,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MiscellaneousController.cs" />
     <Compile Include="Controllers\ModifyKPIController.cs" />
+    <Compile Include="Controllers\ReportViewerController.cs" />
     <Compile Include="Controllers\ToolKPIController.cs" />
     <Compile Include="Controllers\ToolPromotionController.cs" />
     <Compile Include="Global.asax.cs">
@@ -896,6 +897,7 @@
     <Content Include="Views\ModifyKPI\Index.cshtml" />
     <Content Include="Views\KPIReport\Index.cshtml" />
     <Content Include="Views\MonitorKPI\Index.cshtml" />
+    <Content Include="Views\ReportViewer\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

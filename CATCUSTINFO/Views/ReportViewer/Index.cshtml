@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "ReportViewer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Home > ReportViewer</h2>
+
+<div class="panel panel-default">
+    <div class="panel-heading"><b>Report Viewer</b></div>
+    <div class="panel-body">
+        <div class="row top-buffer">
+            <div class="col-lg-1">Report list</div>
+            <div class="col-lg-2">
+                <button class="btn  dropdown-toggle btn-block" type="button" data-toggle="dropdown">
+                    Summary Report
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Summary Report</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row top-buffer">
+            <div class="col-lg-1">Date start</div>
+            <div class="col-lg-2"><input  class="form-control" type="date"  value="2015-01-01" ></div>
+            <div class="col-lg-1">To</div>
+            <div class="col-lg-2"><input class="form-control" type="date"  value="2015-12-31"></div>
+            <div class="col-lg-1"><button type="button" class="btn btn-primary btn-block">View</button></div>
+        </div>
+        <div class="row top-buffer">
+            <button type="button" class="btn btn-default" >
+                <span class="glyphicon glyphicon-print" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="btn btn-default" >
+                <span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-step-backward" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            </button>
+            <span><input type="text" value="3" style="width:30px"/> /12</span>
+            <button type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-step-forward" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+            </button>
+        </div>
+
+        <div id="doc_link" style="float:left;border-color:black;font-size:medium">
+            <br />
+            <a href="">ภาคเหนือ</a>
+            <br />
+            <a href="">ภาคกลาง</a>
+            <br />
+            <a href="">ภาคตะวันออก</a>
+            <br />
+            <a href="">ภาคใต้</a>
+            <br />
+            <a href="">ภาคตะวันตก</a>
+        </div>
+        <div id="doc_view" style="float:right;border-color:black">
+            <a href="~/Content/img/cat_kpi.jpg" target="_blank">
+                <img src="~/Content/img/cat_kpi.jpg" style="width:700px;height:900px;" />
+            </a>
+        </div>
+
+    </div>
+</div>
+
