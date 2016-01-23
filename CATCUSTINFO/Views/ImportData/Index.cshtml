@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Import Data";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Home > Import Data</h2>
+
+<div class="panel panel-default">
+    <div class="panel-heading"><b>Import Data</b></div>
+    <div class="panel-body">
+        <div class="row top-buffer">
+            <div class="col-lg-4" align="right">บริการที่ต้องการ Upload Data</div>
+            <div class="col-lg-4">
+                <div class="dropdown">
+                    <button class="btn  dropdown-toggle btn-block" type="button" data-toggle="dropdown">
+                        เลือกบริการ
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">เลือกบริการ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row top-buffer">
+            <div class="col-lg-4" align="right">Select Files...</div>
+            <div class="col-lg-4">
+                <input type="file" accept="image/*">
+            </div>
+        </div>
+
+        <div class="row top-buffer">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-1"><button type="button" class="btn btn-primary btn-block">OK</button></div>
+            <div class="col-lg-1"><button type="button" class="btn btn-primary btn-block">Cancel</button></div>
+        </div>
+    </div>
+</div>
