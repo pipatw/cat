@@ -1,0 +1,109 @@
+﻿@using Kendo.Mvc.UI
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Home > Modify KPI</h2>
+<div class="row top-buffer">
+    <div id="kpi_form" class="col-lg-9">
+        <div class="panel panel-default">
+            <div class="panel-heading"><b>สำนักงานบริการลูกค้า กสท. เขตเหนือ สข.(น)</b></div>
+            <div class="panel-body">
+                <div class="row top-buffer">
+                    <div class="col-lg-4">จำนวน Port Internet KPI ปี 2558</div><div class="col-lg-3"><input type="text" class="form-control" value="3,000"></div><div class="col-lg-2">Port</div>
+                </div>
+                <div class="row top-buffer">
+                    <div class="col-lg-4">วันที่ได้รับการอนุมัติ KPI</div><div class="col-lg-3"><div class="dropdown">
+                                                                        <button class="btn  dropdown-toggle btn-block" type="button" data-toggle="dropdown">
+                                                                            30 สิงหาคม 2558
+                                                                            <span class="caret"></span>
+                                                                        </button>
+                                                                        <ul class="dropdown-menu">
+                                                                            <li><a href="#">Platinum(Plus)</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                </div>
+                <div class="row top-buffer">
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-2"><button type="button" class="btn btn-primary btn-block">บันทึกค่า KPI</button></div>
+                    <div class="col-lg-2"><button type="button" class="btn btn-primary btn-block">แก้ไขค่า KPI</button></div>
+                    <div class="col-lg-2"><button type="button" class="btn btn-primary btn-block">ยกเลิกการบันทึก</button></div>
+                </div>
+            </div>
+            <div id="kpi_table">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Port Internet ปี 2558</th>
+                            <th>วันที่อนุมัติ KPI</th>
+                            <th>หมายเหตุ</th>
+                            <th>เลขที่หนังสืออนุมัติ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>3,200</td>
+                            <td>20 มกราคม 2558</td>
+                            <td>กำหนดค่าประจำปี</td>
+                            <td>กสท. บด/2545</td>
+                        </tr>
+                        <tr>
+                            <td>3,000</td>
+                            <td>30 สิงหาคม 2558</td>
+                            <td>ขอปรับค่า KPI</td>
+                            <td>กสท. บด/4321</td>
+                        </tr>
+                     
+                    </tbody>
+                </table>
+            </div>
+            <div class="chart-wrapper">
+                @(Html.Kendo().Chart()
+                    .Name("chart1")
+                    //.Title("ระดับประสิทธิภาพงานแยกตามเขต ปี " + (DateTime.Today.Year < 2500 ? DateTime.Today.Year + 543 : DateTime.Today.Year))
+                    .Legend(legend => legend
+                        .Position(ChartLegendPosition.Bottom)
+                    )
+                    .ChartArea(chartArea => chartArea
+                        .Background("transparent")
+                    )
+
+                    .Series(series =>
+                    {
+                        series.Column(new double[] { 3.907, 7.943, 7.848, 9.284, 9.263, 9.801, 3.890, 8.238, 9.552, 6.855 }).Name("สข.(น)");
+                        series.Column(new double[] { 1.988, 2.733, 3.994, 3.464, 4.001, 3.939, 1.333, 2.245, 4.339, 2.727 }).Name("สข.(ตต)");
+                        series.Column(new double[] { 4.743, 7.295, 7.175, 6.376, 8.153, 8.535, 5.247, 4.832, 4.3, 4.3 }).Name("สข.(ต)");
+                        //series.Column(new double[] { -0.253, 0.362, 3.519, 1.799, 2.252, 3.343, 0.843, 2.877, 5.416, 5.590 }).Name("สข.(อน)");
+
+                        //series.Column(new double[] { 2.742, 3.832, 7.905, 8.73, 3.055, 3.143, 5.296, 6.153, 4.251, 3.885 }).Name("สข.(ก)");
+                        //series.Column(new double[] { 0.546, 6.524, 9.304, 4.811, 4.262, 0.619, 0.211, 4.101, 1.493, 9.332 }).Name("สข.(อ)");
+
+                    })
+                    .CategoryAxis(axis => axis
+                        .Categories("ม.ค.", "ก.พ.", "มี.ค.", "เม.ย.", "พ.ค.", "มิ.ย.", "ก.ค.", "ส.ค.", "ก.ย.", "ต.ค.")
+                        .MajorGridLines(lines => lines.Visible(false))
+                    )
+                    .Tooltip(tooltip => tooltip
+                        .Visible(true)
+                        .Format("{0}%")
+                    )
+                            )
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3">
+        <div class="panel panel-default">
+            <div class="panel-heading"><b>สำเนาหลังสืออนุมัติ</b></div>
+            <div class="panel-body">
+                <a href="~/Content/img/cat_kpi.jpg" target="_blank">
+                    <img src="~/Content/img/cat_kpi.jpg" style="width:240px;height:300px;" />
+                </a>
+                <br /> <br />
+                <div class="col-lg-12"><button type="button" class="btn btn-primary btn-block">เพิ่มสำเนาคำสั่ง</button></div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -170,6 +170,7 @@
     <Compile Include="Controllers\InfoDataController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MiscellaneousController.cs" />
+    <Compile Include="Controllers\ModifyKPIController.cs" />
     <Compile Include="Controllers\ToolKPIController.cs" />
     <Compile Include="Controllers\ToolPromotionController.cs" />
     <Compile Include="Global.asax.cs">
@@ -890,6 +891,7 @@
     <Content Include="Views\DataImport\Reconcile.cshtml" />
     <Content Include="Views\InfoData\Index.cshtml" />
     <Content Include="Views\AssignKPI\Index.cshtml" />
+    <Content Include="Views\ModifyKPI\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
