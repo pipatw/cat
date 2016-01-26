@@ -199,6 +199,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\img\cat_kpi.jpg" />
+    <Content Include="Content\img\dev.jpg" />
     <Content Include="Content\kendo.compatibility.css" />
     <Content Include="Content\kendo\2013.2.918\ascx\Currency.ascx" />
     <Content Include="Content\kendo\2013.2.918\ascx\Date.ascx" />
