@@ -9,22 +9,21 @@
     @(Html.Kendo().RadialGauge()
                       .Name("gauge")
 
-                      .Pointer(pointer => pointer.Value(17234))
+                      .Pointer(pointer => pointer.Value(120000))
                                       .HtmlAttributes(new { style = "max-width:320px;height:220px;" })
                       .Scale(scale => scale
-                          .MinorUnit(250)
+                          .MinorUnit(1000)
                           .StartAngle(-60)
                           .EndAngle(240)
-                          .Max(30000)
+                          .Max(130000)
                           .Labels(labels => labels
                               .Position(GaugeRadialScaleLabelsPosition.Outside)
                           )
                           .Ranges(ranges =>
                           {
-                              ranges.Add().From(0).To(10000).Color("#c20000");
-                              ranges.Add().From(10000).To(15000).Color("#ff7a00");
-                              ranges.Add().From(15000).To(18000).Color("#ffc700");
-                              ranges.Add().From(18000).To(30000).Color("#00ff00");
+                              ranges.Add().From(0).To(50000).Color("#c20000");
+                              ranges.Add().From(50000).To(100000).Color("#ffc700");
+                              ranges.Add().From(100000).To(130000).Color("#00ff00");
                           })
                      )
     )
@@ -36,22 +35,21 @@
                 @(Html.Kendo().RadialGauge()
                       .Name("gauge1")
 
-                      .Pointer(pointer => pointer.Value(17234))
+                      .Pointer(pointer => pointer.Value(7234))
                                       .HtmlAttributes(new { style = "max-width:200px;" })
                       .Scale(scale => scale
                           .MinorUnit(250)
                           .StartAngle(-60)
                           .EndAngle(240)
-                          .Max(30000)
+                          .Max(15000)
                           .Labels(labels => labels
                               .Position(GaugeRadialScaleLabelsPosition.Outside)
                           )
                           .Ranges(ranges =>
                           {
-                              ranges.Add().From(0).To(10000).Color("#c20000");
-                              ranges.Add().From(10000).To(15000).Color("#ff7a00");
-                              ranges.Add().From(15000).To(18000).Color("#ffc700");
-                              ranges.Add().From(18000).To(30000).Color("#00ff00");
+                              ranges.Add().From(0).To(5000).Color("#c20000");
+                              ranges.Add().From(5000).To(10000).Color("#ffc700");
+                              ranges.Add().From(10000).To(15000).Color("#00ff00");
                           })
                      )
                 )
@@ -61,22 +59,21 @@
                 @(Html.Kendo().RadialGauge()
                       .Name("gauge2")
 
-                      .Pointer(pointer => pointer.Value(17234))
+                      .Pointer(pointer => pointer.Value(7234))
                                       .HtmlAttributes(new { style = "max-width:200px;" })
                       .Scale(scale => scale
                           .MinorUnit(250)
                           .StartAngle(-60)
                           .EndAngle(240)
-                          .Max(30000)
+                          .Max(15000)
                           .Labels(labels => labels
                               .Position(GaugeRadialScaleLabelsPosition.Outside)
                           )
                           .Ranges(ranges =>
                           {
-                              ranges.Add().From(0).To(10000).Color("#c20000");
-                              ranges.Add().From(10000).To(15000).Color("#ff7a00");
-                              ranges.Add().From(15000).To(18000).Color("#ffc700");
-                              ranges.Add().From(18000).To(30000).Color("#00ff00");
+                              ranges.Add().From(0).To(5000).Color("#c20000");
+                              ranges.Add().From(5000).To(10000).Color("#ffc700");
+                              ranges.Add().From(10000).To(15000).Color("#00ff00");
                           })
                      )
                 )
@@ -86,22 +83,21 @@
                 @(Html.Kendo().RadialGauge()
                       .Name("gauge3")
 
-                      .Pointer(pointer => pointer.Value(17234))
+                      .Pointer(pointer => pointer.Value(9234))
                                       .HtmlAttributes(new { style = "max-width:200px;" })
                       .Scale(scale => scale
                           .MinorUnit(250)
                           .StartAngle(-60)
                           .EndAngle(240)
-                          .Max(30000)
+                          .Max(15000)
                           .Labels(labels => labels
                               .Position(GaugeRadialScaleLabelsPosition.Outside)
                           )
                           .Ranges(ranges =>
                           {
-                              ranges.Add().From(0).To(10000).Color("#c20000");
-                              ranges.Add().From(10000).To(15000).Color("#ff7a00");
-                              ranges.Add().From(15000).To(18000).Color("#ffc700");
-                              ranges.Add().From(18000).To(30000).Color("#00ff00");
+                              ranges.Add().From(0).To(5000).Color("#c20000");
+                              ranges.Add().From(5000).To(10000).Color("#ffc700");
+                              ranges.Add().From(10000).To(15000).Color("#00ff00");
                           })
                      )
                 )
@@ -111,99 +107,98 @@
                 @(Html.Kendo().RadialGauge()
                       .Name("gauge4")
 
-                      .Pointer(pointer => pointer.Value(17234))
+                      .Pointer(pointer => pointer.Value(11234))
                                       .HtmlAttributes(new { style = "max-width:200px;" })
                       .Scale(scale => scale
                           .MinorUnit(250)
                           .StartAngle(-60)
                           .EndAngle(240)
-                          .Max(30000)
+                          .Max(15000)
                           .Labels(labels => labels
                               .Position(GaugeRadialScaleLabelsPosition.Outside)
                           )
                           .Ranges(ranges =>
                           {
-                              ranges.Add().From(0).To(10000).Color("#c20000");
-                              ranges.Add().From(10000).To(15000).Color("#ff7a00");
-                              ranges.Add().From(15000).To(18000).Color("#ffc700");
-                              ranges.Add().From(18000).To(30000).Color("#00ff00");
+                              ranges.Add().From(0).To(5000).Color("#c20000");
+                              ranges.Add().From(5000).To(10000).Color("#ffc700");
+                              ranges.Add().From(10000).To(15000).Color("#00ff00");
                           })
                      )
                 )
                 <b>สข.(อ)</b>
             </div>
         </div>
+        
+    </div>
+    <div id="split" align="center" class="col-lg-12">
         <div class="row top-buffer">
-            <div class="col-lg-3">
+            <div class="col-lg-4">
                 @(Html.Kendo().RadialGauge()
                       .Name("gauge5")
 
-                      .Pointer(pointer => pointer.Value(17234))
+                      .Pointer(pointer => pointer.Value(12234))
                                       .HtmlAttributes(new { style = "max-width:200px;" })
                       .Scale(scale => scale
                           .MinorUnit(250)
                           .StartAngle(-60)
                           .EndAngle(240)
-                          .Max(30000)
+                          .Max(15000)
                           .Labels(labels => labels
                               .Position(GaugeRadialScaleLabelsPosition.Outside)
                           )
                           .Ranges(ranges =>
                           {
-                              ranges.Add().From(0).To(10000).Color("#c20000");
-                              ranges.Add().From(10000).To(15000).Color("#ff7a00");
-                              ranges.Add().From(15000).To(18000).Color("#ffc700");
-                              ranges.Add().From(18000).To(30000).Color("#00ff00");
+                              ranges.Add().From(0).To(5000).Color("#c20000");
+                              ranges.Add().From(5000).To(10000).Color("#ffc700");
+                              ranges.Add().From(10000).To(15000).Color("#00ff00");
                           })
                      )
                 )
                 <b>สข.(ตต)</b>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-4">
                 @(Html.Kendo().RadialGauge()
                       .Name("gauge6")
 
-                      .Pointer(pointer => pointer.Value(17234))
+                      .Pointer(pointer => pointer.Value(11234))
                                       .HtmlAttributes(new { style = "max-width:200px;" })
                       .Scale(scale => scale
                           .MinorUnit(250)
                           .StartAngle(-60)
                           .EndAngle(240)
-                          .Max(30000)
+                          .Max(15000)
                           .Labels(labels => labels
                               .Position(GaugeRadialScaleLabelsPosition.Outside)
                           )
                           .Ranges(ranges =>
                           {
-                              ranges.Add().From(0).To(10000).Color("#c20000");
-                              ranges.Add().From(10000).To(15000).Color("#ff7a00");
-                              ranges.Add().From(15000).To(18000).Color("#ffc700");
-                              ranges.Add().From(18000).To(30000).Color("#00ff00");
+                              ranges.Add().From(0).To(5000).Color("#c20000");
+                              ranges.Add().From(5000).To(10000).Color("#ffc700");
+                              ranges.Add().From(10000).To(15000).Color("#00ff00");
                           })
                      )
                 )
                 <b>สข.(ต)</b>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-4">
                 @(Html.Kendo().RadialGauge()
                       .Name("gauge7")
 
-                      .Pointer(pointer => pointer.Value(17234))
+                      .Pointer(pointer => pointer.Value(13234))
                                       .HtmlAttributes(new { style = "max-width:200px;" })
                       .Scale(scale => scale
                           .MinorUnit(250)
                           .StartAngle(-60)
                           .EndAngle(240)
-                          .Max(30000)
+                          .Max(15000)
                           .Labels(labels => labels
                               .Position(GaugeRadialScaleLabelsPosition.Outside)
                           )
                           .Ranges(ranges =>
                           {
-                              ranges.Add().From(0).To(10000).Color("#c20000");
-                              ranges.Add().From(10000).To(15000).Color("#ff7a00");
-                              ranges.Add().From(15000).To(18000).Color("#ffc700");
-                              ranges.Add().From(18000).To(30000).Color("#00ff00");
+                              ranges.Add().From(0).To(5000).Color("#c20000");
+                              ranges.Add().From(5000).To(10000).Color("#ffc700");
+                              ranges.Add().From(10000).To(15000).Color("#00ff00");
                           })
                      )
                 )

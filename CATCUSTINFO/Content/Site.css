@@ -168,7 +168,7 @@ textarea {
         border-right: solid 1px #ff6a00;
         height: 320px;
         vertical-align: middle;
-        line-height: 320px;
+        /*line-height: 320px;*/
     }
 }
 

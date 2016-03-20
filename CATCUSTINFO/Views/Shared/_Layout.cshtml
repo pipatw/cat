@@ -65,6 +65,7 @@
                         <ul class="dropdown-menu" role="menu">
                             <li>@Html.ActionLink("จัดการผู้ใช้งาน", "index", "ManageUser")</li>
                             <li>@Html.ActionLink("จัดการสิทธิ์", "index", "ManageRole")</li>
+                            <li>@Html.ActionLink("Email", "index", "Email")</li>
                         </ul>
                     </li>
                     <li>@Html.ActionLink("เกี่ยวกับเรา", "index", "about")</li>
@@ -79,7 +80,9 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - ระบบสนับสนุนข้อมูลลูกค้าอินเทอร์เน็ตบรอดแบนด์ | บริษัท กสท โทรคมนาคม จำกัด มหาชน</p>
+            <div style="float:left">CAT Internet Ver1.0&nbsp;&nbsp;&nbsp; &copy; @DateTime.Now.Year - ระบบสนับสนุนข้อมูลลูกค้าอินเทอร์เน็ตบรอดแบนด์ | บริษัท กสท โทรคมนาคม จำกัด มหาชน </div>
+            <div style="float:right">DateTime @DateTime.Now.ToString("dd/MM/yyyy")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ผู้ใช้ : @(User.Identity.Name.ToLower().Contains("jatupol") ? "Admin" : "")</div>
+            
         </footer>
     </div>
 

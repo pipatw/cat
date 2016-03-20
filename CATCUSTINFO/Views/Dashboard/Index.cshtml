@@ -11,7 +11,7 @@
                     @(Html.Kendo().RadialGauge()
           .Name("gauge")
           
-          .Pointer(pointer => pointer.Value(17234))
+          .Pointer(pointer => pointer.Value(@ViewBag.allClient))
                           .HtmlAttributes(new { style = "max-width:320px;height:220px;" })
           .Scale(scale => scale
               .MinorUnit(250)
