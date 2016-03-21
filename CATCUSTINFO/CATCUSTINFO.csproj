@@ -199,6 +199,10 @@
     <Compile Include="Views\MonitorKPIController.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-CATCUSTINFO-20151018014728.mdf" />
+    <Content Include="App_Data\aspnet-CATCUSTINFO-20151018014728_log.ldf">
+      <DependentUpon>aspnet-CATCUSTINFO-20151018014728.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\CAT.mdf" />
     <Content Include="App_Data\CAT_log.ldf">
       <DependentUpon>CAT.mdf</DependentUpon>
