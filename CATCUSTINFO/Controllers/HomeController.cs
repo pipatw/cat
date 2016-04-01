@@ -12,10 +12,18 @@ namespace CATCUSTINFO.Controllers
         public ActionResult Index()
         {
             ViewBag.month = ImportClient.month;
-            ViewBag.allClient = ImportClient.allClient;
-            ViewBag.hinet = ImportClient.hinet;
-            ViewBag.hotnet = ImportClient.hotnet;
-            ViewBag.onnet = ImportClient.onnet;
+            ViewBag.allClient = ImportClient.CountAll();
+            ViewBag.hinet = ImportClient.CountService(1);
+            ViewBag.hotnet = ImportClient.CountService(2);
+            ViewBag.onnet = ImportClient.CountService(3);
+
+            ViewBag.northMonth = ImportClient.countReg(1);
+            ViewBag.northEastMonth = ImportClient.countReg(2);
+            ViewBag.centerMonth = ImportClient.countReg(3);
+            ViewBag.eastMonth = ImportClient.countReg(4);
+            ViewBag.westMonth = ImportClient.countReg(5);
+            ViewBag.southMonth = ImportClient.countReg(6);
+            ViewBag.subMonth = ImportClient.countReg(7);
 
             ViewBag.northClient = ImportClient.northClient;
             ViewBag.southClient = ImportClient.southClient;
@@ -23,7 +31,7 @@ namespace CATCUSTINFO.Controllers
             ViewBag.westClient = ImportClient.westClient;
             ViewBag.northEastClient = ImportClient.northEastClient;
             ViewBag.centerClient = ImportClient.centerClient;
-            var x = ImportClient.northClient.LastOrDefault() / ImportClient.northKpi;
+            ViewBag.subClient = ImportClient.subClient;
             ViewBag.northPer = ImportClient.northPer;
 
             return View();

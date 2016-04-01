@@ -41,38 +41,41 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="chart-wrapper">
+                    <div style="padding-left:25px">
+                        @(Html.Kendo().Chart()
+                        .Name("chartmedia")
+                        .Title(title => title
+                                    .Text("แยกตามประเภทสาย")
+                                    .Position(ChartTitlePosition.Top)
+                                    .Visible(false)
+                                    )
+                        .Legend(legend => legend
+                            .Visible(false)
+                                )
+                                .HtmlAttributes(new { style = "max-width:320px;height:320px;" })
+                        .Series(series =>
+                        {
+                            series.Pie(new dynamic[] {
+                                new {category="HINET",value=@ViewBag.hinet,color="#0094ff"},
+                                new {category="HOTNET",value=@ViewBag.hotnet,color="	#ff9d36"},
+                                new {category="ONNET",value=@ViewBag.onnet,color="#e6a2ff"}
+                            })
+                            .Labels(labels => labels
+                                .Template("#= category #: \n #= value#%")
+                                .Background("transparent")
+                                .Visible(true)
+                                .Position(ChartPieLabelsPosition.Center)
+                            )
+                            .StartAngle(150);
+                        })
+                        .Tooltip(tooltip => tooltip
+                            .Visible(true)
+                            .Format("{0}%")
+                        )
+                        )
 
-                    @(Html.Kendo().Chart()
-        .Name("chartmedia")
-        .Title(title => title
-                    .Text("แยกตามประเภทสาย")
-                    .Position(ChartTitlePosition.Top)
-                    .Visible(false)
-                    )
-        .Legend(legend => legend
-            .Visible(false)
-                )
-                .HtmlAttributes(new { style = "max-width:320px;height:320px;" })
-        .Series(series =>
-        {
-            series.Pie(new dynamic[] {
-                new {category="HINET",value=@ViewBag.hinet,color="#0094ff"},
-                new {category="HOTNET",value=@ViewBag.hotnet,color="	#ff9d36"},
-                new {category="ONNET",value=@ViewBag.onnet,color="#e6a2ff"}
-            })
-            .Labels(labels => labels
-                .Template("#= category #: \n #= value#%")
-                .Background("transparent")
-                .Visible(true)
-                .Position(ChartPieLabelsPosition.Center)
-            )
-            .StartAngle(150);
-        })
-        .Tooltip(tooltip => tooltip
-            .Visible(true)
-            .Format("{0}%")
-        )
-                    )
+                    </div>
+               
                 </div>
 
             </div>
@@ -99,13 +102,14 @@
         )
         .Series(series =>
         {
-            series.Line(ViewBag.northClient).Name("สข.(น)");
-            series.Line(ViewBag.southClient).Name("สข.(ตต)");
-            series.Line(ViewBag.southClient).Name("สข.(ต)");
-            series.Line(ViewBag.eastClient).Name("สข.(อ)");
-            series.Line(ViewBag.westClient).Name("สข.(ตต)");
-            series.Line(ViewBag.northEastClient).Name("สข.(อน)");
-            series.Line(ViewBag.centerClient).Name("สข.(ก)");
+            series.Line(ViewBag.northClient).Name("สข.(น)").Color("blue");
+            series.Line(ViewBag.southClient).Name("สข.(ต)").Color("green");
+            series.Line(ViewBag.eastClient).Name("สข.(อ)").Color("gray");
+            series.Line(ViewBag.westClient).Name("สข.(ตต)").Color("black");
+            series.Line(ViewBag.northEastClient).Name("สข.(อน)").Color("yellow");
+            series.Line(ViewBag.centerClient).Name("สข.(ก)").Color("brown");
+            series.Line(ViewBag.subClient).Name("สข.(ย)").Color("red");
+            
         })
         .CategoryAxis(axis => axis
             .Categories("ม.ค.", "ก.พ.", "มี.ค.", "เม.ย.", "พ.ค.", "มิ.ย.", "ก.ค.", "ส.ค.", "ก.ย.", "ต.ค.", "พ.ย.", "ธ.ค.")
@@ -116,6 +120,7 @@
                                     .Line(line => line.Visible(false))
                                     .AxisCrossingValue(-10)
             .Max(20000)
+            .MajorUnit(2500)
         )
         .Tooltip(tooltip => tooltip
             .Visible(true)
@@ -144,8 +149,8 @@
                         .Max(100)
                         .PlotBands(bands =>
                         {
-                            bands.Add().From(0).To(30).Color("#FE2E2E");
-                            bands.Add().From(30).To(100).Color("#D8D8D8");
+                            bands.Add().From(0).To(ViewBag.northMonth).Color("red");
+                            bands.Add().From(ViewBag.northMonth).To(100).Color("#D8D8D8");
                         })
                     )
                     .Data(ViewBag.TemperatureRange)
@@ -167,8 +172,8 @@
                         .Max(100)
                         .PlotBands(bands =>
                         {
-                            bands.Add().From(0).To(60).Color("#04B404");
-                            bands.Add().From(60).To(100).Color("#D8D8D8");
+                            bands.Add().From(0).To(ViewBag.westMonth).Color("red");
+                            bands.Add().From(ViewBag.westMonth).To(100).Color("#D8D8D8");
                         })
                     )
                             .Data(ViewBag.TargetRange)
@@ -190,8 +195,8 @@
                         .Max(100)
                         .PlotBands(bands =>
                         {
-                            bands.Add().From(0).To(40).Color("#FE2E2E");
-                            bands.Add().From(40).To(100).Color("#D8D8D8");
+                            bands.Add().From(0).To(ViewBag.southMonth).Color("red");
+                            bands.Add().From(ViewBag.southMonth).To(100).Color("#D8D8D8");
                         })
                     )
                     .Data(ViewBag.TemperatureRange)
@@ -213,8 +218,8 @@
                                 .Max(100)
                                 .PlotBands(bands =>
                                 {
-                                    bands.Add().From(0).To(80).Color("#04B404");
-                                    bands.Add().From(80).To(100).Color("#D8D8D8");
+                                    bands.Add().From(0).To(ViewBag.subMonth).Color("red");
+                                    bands.Add().From(ViewBag.subMonth).To(100).Color("#D8D8D8");
                                 })
                             )
                             .Data(ViewBag.TemperatureRange)
@@ -243,8 +248,8 @@
                         .Max(100)
                         .PlotBands(bands =>
                         {
-                            bands.Add().From(0).To(70).Color("#04B404");
-                            bands.Add().From(70).To(100).Color("#D8D8D8");
+                            bands.Add().From(0).To(ViewBag.northEastMonth).Color("#04B404");
+                            bands.Add().From(ViewBag.northEastMonth).To(100).Color("#D8D8D8");
                         })
                     )
                             .Data(ViewBag.TargetRange)
@@ -266,8 +271,8 @@
                         .Max(100)
                         .PlotBands(bands =>
                         {
-                            bands.Add().From(0).To(60).Color("#04B404");
-                            bands.Add().From(60).To(100).Color("#D8D8D8");
+                            bands.Add().From(0).To(ViewBag.centerMonth).Color("red");
+                            bands.Add().From(ViewBag.centerMonth).To(100).Color("#D8D8D8");
                         })
                     )
                     .Data(ViewBag.TemperatureRange)
@@ -289,8 +294,8 @@
                         .Max(50)
                         .PlotBands(bands =>
                         {
-                            bands.Add().From(0).To(70).Color("#04B404");
-                            bands.Add().From(70).To(100).Color("#D8D8D8");
+                            bands.Add().From(0).To(ViewBag.eastMonth).Color("yellow");
+                            bands.Add().From(ViewBag.eastMonth).To(100).Color("#D8D8D8");
                         })
                     )
                             .Data(ViewBag.TargetRange)

@@ -7,13 +7,15 @@
 
 <div class="row">
     <div class="col-md-4">
-        <div><img src="~/Content/assets/Logo.png" style="max-width:140px;" /></div>
+        <div style="padding-top: 5px"><img src="~/Content/assets/Logo.png" style="max-width:140px;" /></div>
         <div class="loginleftpanel" style="">
             <br /><br /><br /><br /><br /><br />
-            <label style="align-content:center">ระบบสนับสนุนข้อมูลลูกค้าอินเทอร์เน็ตบรอดแบนด์</label>
-        </div>
+            <div style="text-align: center">ระบบสนับสนุนข้อมูล</div>
+                <div style="text-align: center">ลูกค้าอินเทอร์เน็ต</div>
+                <div style="text-align: center">บรอดแบนด์</div>
+                </div>
 
-    </div>
+            </div>
     <div class="col-md-8">
         <section id="loginForm">
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -42,7 +44,7 @@
                     <div class="col-md-offset-3 col-md-9">
                         <div class="checkbox">
                             @Html.CheckBoxFor(m => m.RememberMe)
-                            @Html.LabelFor(m => m.RememberMe)
+                            @Html.LabelFor(m => m.RememberMe) <a>ลืมรหัสผ่าน</a>
                         </div>
                     </div>
                 </div>
