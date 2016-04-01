@@ -5,6 +5,18 @@
 }
 
 <h2>Home > Import Data</h2>
+<script>
+    $(function () {
+
+        $(".dropdown-menu li a").click(function () {
+
+            $("#ddl:first-child").text($(this).text());
+            $("#ddl:first-child").val($(this).text());
+
+        });
+
+    });
+</script>
 
 <div class="panel panel-default">
     <div class="panel-heading"><b>Import Data</b></div>
@@ -13,7 +25,7 @@
             <div class="col-lg-4" align="right">บริการที่ต้องการ Upload Data</div>
             <div class="col-lg-4">
                 <div class="dropdown">
-                    <button class="btn  dropdown-toggle btn-block" type="button" data-toggle="dropdown">
+                    <button id="ddl" class="btn  dropdown-toggle btn-block" type="button" data-toggle="dropdown">
                         เลือกบริการ
                         <span class="caret"></span>
                     </button>
@@ -29,7 +41,7 @@
         <div class="row top-buffer">
             <div class="col-lg-4" align="right">Select Files...</div>
             <div class="col-lg-4">
-                <input type="file" accept=".csv">
+                <input type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
             </div>
         </div>
 

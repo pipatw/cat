@@ -3,8 +3,25 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<script>
+    $(function () {
 
-<h2>Home > Information Data</h2>
+        $(".dropdown-menu li a").click(function () {
+            var selText = $(this).text();
+            $(this).parents('.dropdown').find('.dropdown-toggle').html(selText + '<span class="caret"></span>');
+            if(selText=='CAT hinet')
+            {
+                $('#hinet').empty();
+            }
+            else if (selText == 'CAT hotnet')
+            {}
+            else if (selText == 'CAT onnet')
+            { }
+        });
+
+    });
+</script>
+<h2>Home > Information Data and Analysys Data</h2>
 
 <div class="panel panel-default">
     <div class="panel-body">
@@ -31,7 +48,7 @@
     <div class="panel-body">
         <div class="row">
             <div class="col-lg-1" align="right">ชื่อบริการ</div>
-            <div class="col-lg-2" ><div class="dropdown">
+            <div class="col-lg-2" ><div  class="dropdown">
                     <button class="btn  dropdown-toggle btn-block" type="button" data-toggle="dropdown">
                         CAT hinet
                         <span class="caret"></span>
@@ -45,12 +62,12 @@
             </div>
             <div class="col-lg-1" align="right">Packages</div>
             <div class="col-lg-2">
-                <div class="dropdown">
+                <div id="hinet" class="dropdown">
                     <button class="btn  dropdown-toggle btn-block" type="button" data-toggle="dropdown">
                         Platinum(Plus)
                         <span class="caret"></span>
                     </button>
-                    <ul class="dropdown-menu">
+                    <ul id="hinet" class="dropdown-menu">
                         <li><a href="#">BPL Standard</a></li>
                         <li><a href="#">LitePaq</a></li>
                         <li><a href="#">Premium</a></li>
@@ -58,6 +75,8 @@
                         <li><a href="#">ValuePaq</a></li>
                     </ul>
                 </div>
+
+                
             </div>
             <div class="col-lg-1" align="right">ความเร็ว</div>
             <div class="col-lg-2">
@@ -130,6 +149,36 @@
                 </div>
             </div>
         </div>
+
+        <div class="row top-buffer">
+            <div class="col-lg-2" align="right">จำนวนเปอร์เซนต์ที่เพิ่ม</div>
+            <div class="col-lg-2">
+                <input type="text" value="20" />
+            </div>
+            <div class="col-lg-1">%</div>
+                <div class="col-lg-2" align="right">จำนวนเปอร์เซนต์ที่ลด</div>
+                <div class="col-lg-2">
+                    <input type="text" value="-10" />
+                </div>
+            <div class="col-lg-1">%</div>
+
+            </div>
+
+        <div class="row top-buffer">
+            <div class="col-lg-2" align="right">จำนวนลูกค้า</div>
+            <div class="col-lg-2">
+                <input type="text" value="250000" />
+            </div>
+            <div class="col-lg-1">ราย</div>
+            <div class="col-lg-2" align="right">จำนวนลูกค้าตามที่ประมาณการ</div>
+            <div class="col-lg-2">
+                <input type="text" value="250000" />
+            </div>
+            <div class="col-lg-1">ราย</div>
+
+        </div>
+
+
         <div class="row top-buffer">
                 <div class="col-lg-3"></div>
                 <div class="col-lg-1"><button type="button" class="btn btn-primary btn-block">OK</button></div>

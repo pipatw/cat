@@ -4,24 +4,32 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <h2>Home > Modify KPI</h2>
+
 <div class="row top-buffer">
     <div id="kpi_form" class="col-lg-9">
         <div class="panel panel-default">
             <div class="panel-heading"><b>สำนักงานบริการลูกค้า กสท. เขตเหนือ สข.(น)</b></div>
             <div class="panel-body">
                 <div class="row top-buffer">
-                    <div class="col-lg-4">จำนวน Port Internet KPI ปี 2559</div><div class="col-lg-3"><input type="text" class="form-control" value="3,000"></div><div class="col-lg-2">Port</div>
+                    <div class="col-lg-3">จำนวน Port Internet KPI ปี 2559</div>
+                    <div class="col-lg-2"><input style="text-align:center;" type="text" class="form-control" value="3,000"></div>
+                    <div class="col-lg-1">Port</div>
+                    <div class="col-lg-2">เลขที่หนังสืออนุมัติ</div>
+                    <div class="col-lg-2">
+                        <input type="text" class="form-control" value="กสท.บด/2561">
+                    </div>
                 </div>
                 <div class="row top-buffer">
-                    <div class="col-lg-4">วันที่ได้รับการอนุมัติ KPI</div><div class="col-lg-3"><div class="dropdown">
-                                                                        <button class="btn  dropdown-toggle btn-block" type="button" data-toggle="dropdown">
-                                                                            30 สิงหาคม 2559
-                                                                            <span class="caret"></span>
-                                                                        </button>
-                                                                        <ul class="dropdown-menu">
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
+                    <div class="col-lg-3">วันที่ได้รับการอนุมัติ KPI</div>
+                    <div class="col-lg-3">
+                    <div class="demo-section k-content">
+                        @Html.Kendo().DatePicker().Name("datepicker").Value("10/10/2558").HtmlAttributes(new { style = "width: 100%" })
+                    </div>
+                    </div>
+                    <div class="col-lg-2">หมายเหตุ</div>
+                    <div class="col-lg-2">
+                        <input type="text" class="form-control" value="ขอปรับค่า KPI">
+                    </div>
                 </div>
                 <div class="row top-buffer">
                     <div class="col-lg-4"></div>
@@ -95,13 +103,14 @@
 
     <div class="col-lg-3">
         <div class="panel panel-default">
-            <div class="panel-heading"><b>สำเนาหลังสืออนุมัติ</b></div>
+            <div class="panel-heading"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;สำเนาหลังสืออนุมัติ</b></div>
             <div class="panel-body">
                 <a href="~/Content/img/cat_kpi.jpg" target="_blank">
                     <img src="~/Content/img/cat_kpi.jpg" style="width:240px;height:300px;" />
                 </a>
                 <br /> <br />
-                <div class="col-lg-12"><button type="button" class="btn btn-primary btn-block">เพิ่มสำเนาคำสั่ง</button></div>
+                @*<div class="col-lg-12"><button type="button" class="btn btn-primary btn-block">เพิ่มสำเนาคำสั่ง</button></div>*@
+                <input type="file" accept=".jpg">
             </div>
         </div>
     </div>
