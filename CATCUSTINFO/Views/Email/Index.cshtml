@@ -4,6 +4,45 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<script>
+    $(function () {
+        $("#btnAdd1").click(function () {
+            var m = $("#txt1").val();
+            $("#txt1").val('');
+            $("#txt11").val($("#txt11").val().trim() + '\n' + m);
+        })
+
+        $("#btnDel1").click(function () {
+            var newText = $('#txt11').val().replace(/^.*\n/g, "");
+            $('#txt11').val(newText);
+        })
+
+        $("#btnAdd2").click(function () {
+            var m = $("#txt2").val();
+            $("#txt2").val('');
+            $("#txt22").val($("#txt22").val().trim() + '\n' + m);
+        })
+
+        $("#btnDel2").click(function () {
+            var newText = $('#txt22').val().replace(/^.*\n/g, "");
+            $('#txt22').val(newText);
+        })
+
+        $("#btnAdd3").click(function () {
+            var m = $("#txt3").val();
+            $("#txt3").val('');
+            $("#txt33").val($("#txt33").val().trim() + '\n' + m);
+        })
+
+        $("#btnDel3").click(function () {
+            var newText = $('#txt33').val().replace(/^.*\n/g, "");
+            $('#txt33').val(newText);
+        })
+    })
+    
+
+</script>
+
 <h2>Home > Email</h2>
 
 <div class="panel panel-default">
@@ -25,24 +64,37 @@
             <div class="col-lg-1">
                 <label>ของทุกเดือน</label>
             </div>
+            <div class="col-lg-3">
+                <label>ข้อความที่ต้องการแสดงใน E-mail</label>
+                <textarea name="Text1" cols="40" rows="5"></textarea>
+            </div>
         </div>
+
+        <div class="row top-buffer">
+            <div class="col-lg-7">
+            </div>
+            <div class="col-lg-1"><button type="button" class="btn btn-primary btn-block">Save</button></div>
+            <div class="col-lg-1"><button type="button" class="btn btn-primary btn-block">Edit</button></div>
+            <div class="col-lg-1"><button type="button" class="btn btn-primary btn-block">Cancel</button></div>
+        </div>
+
         <div class="row top-buffer">
             <div class="col-lg-3">
-                <textarea name="Text1" cols="40" rows="5"  >jatupol.a@cattelcom.com</textarea>
+                <textarea id="txt1" name="Text1" cols="40" rows="5">jatupol.a@cattelcom.com</textarea>
             </div>
             <div class="col-lg-1">
-                <button type="button" class="btn btn-primary btn-block">Add</button>
-                <button type="button" class="btn btn-primary btn-block">Remove</button>
+                <button id="btnAdd1" type="button" class="btn btn-primary btn-block">Add</button>
+                <button id="btnDel1" type="button" class="btn btn-primary btn-block">Remove</button>
             </div>
             <div class="col-lg-3">
-                <textarea name="Text1" cols="40" rows="5">
+                <textarea id="txt11" name="Text1" cols="40" rows="5">
 jatupol.a@cattelcom.com
 jongkolnee.m@cattelecom.com
 jongchit.j@cattelecom.com
                 </textarea>
             </div>
         </div>
-</div>
+    </div>
 
 <div class="panel panel-default">
     <div class="panel-heading">ขั้นตอนเมื่อมีการนำเข้าข้อมูล</div>
@@ -58,20 +110,34 @@ jongchit.j@cattelecom.com
         <div class="col-lg-1">
             <button type="button" class="btn btn-primary btn-block">Search</button>
         </div>
+        <div class="col-lg-4"></div>
+            <div class="col-lg-3">
+                <label>ข้อความที่ต้องการแสดงใน E-mail</label>
+                <textarea name="Text1" cols="40" rows="5"></textarea>
+            </div>
+        </div>
+
+    <div class="row top-buffer">
+        <div class="col-lg-7">
+        </div>
+        <div class="col-lg-1"><button type="button" class="btn btn-primary btn-block">Save</button></div>
+        <div class="col-lg-1"><button type="button" class="btn btn-primary btn-block">Edit</button></div>
+        <div class="col-lg-1"><button type="button" class="btn btn-primary btn-block">Cancel</button></div>
     </div>
+
     <div class="row top-buffer">
         <div class="col-lg-3">
-            <textarea name="Text1" cols="40" rows="5">jatupol.a@cattelcom.com</textarea>
+            <textarea id="txt2" name="Text1" cols="40" rows="5">jatupol.a@cattelcom.com</textarea>
         </div>
         <div class="col-lg-1">
-            <button type="button" class="btn btn-primary btn-block">Add</button>
-            <button type="button" class="btn btn-primary btn-block">Remove</button>
+            <button id="btnAdd2" type="button" class="btn btn-primary btn-block">Add</button>
+            <button id="btnDel2" type="button" class="btn btn-primary btn-block">Remove</button>
         </div>
         <div class="col-lg-3">
-            <textarea name="Text1" cols="40" rows="5">
-                jatupol.a@cattelcom.com
-                jongkolnee.m@cattelecom.com
-                jongchit.j@cattelecom.com
+            <textarea id="txt22" name="Text1" cols="40" rows="5">
+jatupol.a@cattelcom.com
+jongkolnee.m@cattelecom.com
+jongchit.j@cattelecom.com
             </textarea>
         </div>
     </div>
@@ -91,22 +157,37 @@ jongchit.j@cattelecom.com
         <div class="col-lg-1">
             <button type="button" class="btn btn-primary btn-block">Search</button>
         </div>
+        <div class="col-lg-4"></div>
+        <div class="col-lg-3">
+            <label>ข้อความที่ต้องการแสดงใน E-mail</label>
+            <textarea name="Text1" cols="40" rows="5"></textarea>
+        </div>
     </div>
+
+    <div class="row top-buffer">
+        <div class="col-lg-7">
+        </div>
+        <div class="col-lg-1"><button type="button" class="btn btn-primary btn-block">Save</button></div>
+        <div class="col-lg-1"><button type="button" class="btn btn-primary btn-block">Edit</button></div>
+        <div class="col-lg-1"><button type="button" class="btn btn-primary btn-block">Cancel</button></div>
+    </div>
+
     <div class="row top-buffer">
         <div class="col-lg-3">
-            <textarea name="Text1" cols="40" rows="5">jongkolnee.m@cattelecom.com</textarea>
+            <textarea id="txt3" name="Text1" cols="40" rows="5">jongkolnee.m@cattelecom.com</textarea>
         </div>
         <div class="col-lg-1">
-            <button type="button" class="btn btn-primary btn-block">Add</button>
-            <button type="button" class="btn btn-primary btn-block">Remove</button>
+            <button id="btnAdd3" type="button" class="btn btn-primary btn-block">Add</button>
+            <button id="btnDel3" type="button" class="btn btn-primary btn-block">Remove</button>
         </div>
         <div class="col-lg-3">
-            <textarea name="Text1" cols="40" rows="5">
-                jatupol.a@cattelcom.com
-                jongkolnee.m@cattelecom.com
-                jongchit.j@cattelecom.com
+            <textarea id="txt33" name="Text1" cols="40" rows="5">
+jatupol.a@cattelcom.com
+jongkolnee.m@cattelecom.com
+jongchit.j@cattelecom.com
             </textarea>
         </div>
+       
     </div>
 </div>
 
