@@ -9,14 +9,59 @@
         $(".dropdown-menu li a").click(function () {
             var selText = $(this).text();
             $(this).parents('.dropdown').find('.dropdown-toggle').html(selText + '<span class="caret"></span>');
+
+            
+
             if(selText=='CAT hinet')
             {
                 $('#hinet').empty();
+                $("#hinet").append('<li><a href="#">BPL Standard</a></li>');
+                $("#hinet").append('<li><a href="#">LitePaq</a></li>');
+                $("#hinet").append('<li><a href="#">Premium</a></li>');
+                $("#hinet").append('<li><a href="#">Standard</a></li>');
+                $("#hinet").append('<li><a href="#">ValuePaq</a></li>');
+
+                $(".dropdown-menu li a").on("click", function () {
+                    $(this).parents('.dropdown').find('.dropdown-toggle').html($(this).text() + '<span class="caret"></span>');
+                });
             }
             else if (selText == 'CAT hotnet')
-            {}
-            else if (selText == 'CAT onnet')
-            { }
+            {
+                $('#hinet').empty();
+                $("#hinet").append('<li><a href="#">Standard</a></li>');
+                $(".dropdown-menu li a").on("click", function () {
+                    $(this).parents('.dropdown').find('.dropdown-toggle').html($(this).text() + '<span class="caret"></span>');
+                });
+            }
+            else if (selText == 'CAT onnet') {
+                $('#hinet').empty();
+                $("#hinet").append('<li><a href="#">Business_V0</a></li>');
+                $("#hinet").append('<li><a href="#">Business_V1</a></li>');
+                $("#hinet").append('<li><a href="#">Business-Plus 1 IP V0</a></li>');
+                $("#hinet").append('<li><a href="#">Business-Plus 8 IP V0</a></li>');
+                $("#hinet").append('<li><a href="#">Gold</a></li>');
+                $("#hinet").append('<li><a href="#">Gold (Plus)</a></li>');
+                $("#hinet").append('<li><a href="#">Home_V0</a></li>');
+                $("#hinet").append('<li><a href="#">Home-Plus_V0</a></li>');
+                $("#hinet").append('<li><a href="#">HOMEUSE</a></li>');
+                $("#hinet").append('<li><a href="#">LitePaq_Hinet</a></li>');
+                $("#hinet").append('<li><a href="#">Platinum</a></li>');
+                $("#hinet").append('<li><a href="#">Platinum (Plus) Static Public 1 IP</a></li>');
+                $("#hinet").append('<li><a href="#">Platinum (Plus) Static Public 8 IP</a></li>');
+                $("#hinet").append('<li><a href="#">Platinum 8 IP</a></li>');
+                $("#hinet").append('<li><a href="#">Premium_Hinet</a></li>');
+                $("#hinet").append('<li><a href="#">Silver</a></li>');
+                $("#hinet").append('<li><a href="#">Silver (SAB)</a></li>');
+                $("#hinet").append('<li><a href="#">SME Large</a></li>');
+                $("#hinet").append('<li><a href="#">SME Medium</a></li>');
+                $("#hinet").append('<li><a href="#">SME Small</a></li>');
+                $(".dropdown-menu li a").on("click", function () {
+                    $(this).parents('.dropdown').find('.dropdown-toggle').html($(this).text() + '<span class="caret"></span>');
+                });
+            }
+            else {
+               
+            }
         });
 
     });
@@ -48,7 +93,8 @@
     <div class="panel-body">
         <div class="row">
             <div class="col-lg-1" align="right">ชื่อบริการ</div>
-            <div class="col-lg-2" ><div  class="dropdown">
+            <div class="col-lg-2" >
+                <div  class="dropdown">
                     <button class="btn  dropdown-toggle btn-block" type="button" data-toggle="dropdown">
                         CAT hinet
                         <span class="caret"></span>
@@ -62,8 +108,8 @@
             </div>
             <div class="col-lg-1" align="right">Packages</div>
             <div class="col-lg-2">
-                <div id="hinet" class="dropdown">
-                    <button class="btn  dropdown-toggle btn-block" type="button" data-toggle="dropdown">
+                <div class="dropdown">
+                    <button id="ddl" class="btn  dropdown-toggle btn-block" type="button" data-toggle="dropdown">
                         Platinum(Plus)
                         <span class="caret"></span>
                     </button>
